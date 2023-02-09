@@ -1,0 +1,5 @@
+channels:
+- defaults
+- conda-forge
+dependencies:
+  - faiss==1.7.0
