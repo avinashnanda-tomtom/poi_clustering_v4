@@ -65,6 +65,7 @@ def gen_cos_candidates(log):
         config.root_dir
         + f"Blocking_1/outputs/candidates_topk_cosine_{config.country}_{config.COSINE_NEIGHBORS}.parquet",
         compression="zstd",
+        engine="pyarrow",
         index=None,
     )
 

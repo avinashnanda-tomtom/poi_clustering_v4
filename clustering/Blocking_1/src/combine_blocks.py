@@ -102,7 +102,7 @@ def combine(log):
 
     ddf.to_parquet(
         config.output_stage1 + f"batch_candidates/{config.country}_parquet",
-        engine="fastparquet",
+        engine="pyarrow",
         compression="zstd",
         write_index=False,
         write_metadata_file=None,

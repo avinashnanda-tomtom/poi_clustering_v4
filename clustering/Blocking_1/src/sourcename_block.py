@@ -83,6 +83,7 @@ def name_block(log):
         config.root_dir
         + f"Blocking_1/outputs/candidates_source_name_{config.country}.parquet",
         compression="zstd",
+        engine="pyarrow",
         index=None,
     )
 

@@ -87,6 +87,7 @@ def house_block(log):
         config.root_dir
         + f"Blocking_1/outputs/candidates_house_number_{config.country}.parquet",
         compression="zstd",
+        engine="pyarrow",
         index=None,
     )
 

@@ -14,14 +14,14 @@ def remove_exact_dups(log):
     date_log = datetime.now().strftime("%d_%m_%Y")
     
     df = pd.read_csv(config.raw_dir + f"Fuse_{config.country}.csv",engine='c')
-    df.to_parquet(config.raw_dir + f"Fuse_{config.country}_archive_{date_log}.parquet",engine='fastparquet',compression="zstd",index=None)
+    df.to_parquet(config.raw_dir + f"Fuse_{config.country}_archive_{date_log}.parquet",engine='pyarrow',compression="zstd",index=None)
 
     df = drop_zero_coord(df)
     df = df.reset_index(drop=True)
 
     log.info(f"length of overall dataframe after dropping zero coordinates {len(df)}")
 
-    df.to_parquet(config.raw_dir + f"Fuse_{config.country}_with_dups.parquet",engine='fastparquet',compression="zstd",index=None)
+    df.to_parquet(config.raw_dir + f"Fuse_{config.country}_with_dups.parquet",engine='pyarrow',compression="zstd",index=None)
     log.info(f"length of overall dataframe before dropping exact duplicates {len(df)}")
 
 

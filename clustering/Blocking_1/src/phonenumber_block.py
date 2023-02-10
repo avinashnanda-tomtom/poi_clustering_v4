@@ -71,6 +71,7 @@ def phone_block(log):
         config.root_dir
         + f"Blocking_1/outputs/candidates_phone_number_{config.country}.parquet",
         compression="zstd",
+        engine="pyarrow",
         index=None,
     )
 
